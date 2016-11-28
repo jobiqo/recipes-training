@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file
+ * Hook implementations for the Recipes module.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function recipes_form_node_rezept_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $form['actions']['publish']['#submit'][] = 'recipes_node_rezept_submit';
+}
+
+/**
+ * Additional submit callback for the rezept form.
+ */
+function recipes_node_rezept_submit($form, FormStateInterface $form_state) {
+  drpal_set_message(t('Thank you for submitting your recipe!'));
+}
