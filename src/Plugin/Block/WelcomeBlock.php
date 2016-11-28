@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\recipies\Plugin\Block;
+namespace Drupal\recipes\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
