@@ -8,9 +8,12 @@
 use Drupal\Core\Form\FormStateInterface;
 
 /**
- * Implements hook_form_FORM_ID_alter().
+ * Implements hook_form_BASE_FORM_ID_alter().
+ *
+ * This alters all node forms because we don't know the machine name of the
+ * recipe content type that the students created :(
  */
-function recipes_form_node_rezept_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+function recipes_form_node_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   $form['actions']['publish']['#submit'][] = 'recipes_node_rezept_submit';
 }
 
