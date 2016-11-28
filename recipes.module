@@ -23,3 +23,18 @@ function recipes_form_node_form_alter(&$form, FormStateInterface $form_state, $f
 function recipes_node_rezept_submit($form, FormStateInterface $form_state) {
   drpal_set_message(t('Thank you for submitting your recipe!'));
 }
+
+/**
+ * Implements hook_prepprocess_TEMPLATE for the "node" template.
+ */
+function recipes_preprocess_node(&$variables) {
+  $config = \Drupal::config('recipes.settings');
+
+  // @todo: Add a boolean variable 'show_message' to the twig variables.
+
+  // Add cacheability metadata to ensure config changes are reflected.
+  $cache_extras = [];
+  \Drupal\Core\Render\BubbleableMetadata::createFromObject($config)
+    ->applyTo($cache_extras);
+  render($cache_extras);
+}
