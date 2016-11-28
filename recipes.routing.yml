@@ -1,0 +1,7 @@
+recipes.settings:
+  path: '/admin/config/system/recipes'
+  defaults:
+    _form: '\Drupal\recipes\Form\RecipesSettingsForm'
+    _title: 'Recipe settings'
+  requirements:
+    _permission: 'administer site configuration'
