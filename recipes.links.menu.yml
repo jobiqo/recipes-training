@@ -1,0 +1,5 @@
+recipes.admin:
+  title: Recipe settings
+  description: 'Manage recipe settings.'
+  parent: system.admin_config_system
+  route_name: recipes.settings
