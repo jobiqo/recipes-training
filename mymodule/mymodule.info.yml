@@ -1,4 +1,4 @@
-name: Exam module
+name: mymodule
 description: Example module for the exam
 type: module
 core: 8.x
