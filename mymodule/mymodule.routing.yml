@@ -1,0 +1,7 @@
+recipes.settings:
+  path: '/admin/config/system/mymodule'
+  defaults:
+    _form: '\Drupal\mymodule\Form\MymoduleSettingsForm'
+    _title: 'Mymodule settings'
+  requirements:
+    _permission: 'administer site configuration'
