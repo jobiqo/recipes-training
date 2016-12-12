@@ -14,7 +14,7 @@ class MymoduleSettingsForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function getFormId() {
-    return 'maymodule_admin_settings';
+    return 'mymodule_admin_settings';
   }
 
   /**
