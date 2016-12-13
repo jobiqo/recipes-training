@@ -1,4 +1,4 @@
-recipes.settings:
+mymodule.settings:
   path: '/admin/config/system/mymodule'
   defaults:
     _form: '\Drupal\mymodule\Form\MymoduleSettingsForm'

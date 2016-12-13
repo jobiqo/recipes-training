@@ -28,6 +28,13 @@ class MymoduleSettingsForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
+
+    $form['article_highlight'] = array(
+      '#type' => 'checkbox',
+      '#title' => 'Artikel als Highlights ausgeben',
+      '#default_value' => $this->config('mymodule.settings')->get('highlight'),
+    );
+
     // Insert the form elements here!
 
     return parent::buildForm($form, $form_state);
@@ -37,7 +44,10 @@ class MymoduleSettingsForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    // Insert saving of the configuration here!
+
+    $this->config('mymodule.settings')
+      ->set('highlight', $form_state->getValue('article_highlight'))
+      ->save();
 
     parent::submitForm($form, $form_state);
   }
