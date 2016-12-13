@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file
+ * Hook implementations for the mymodule module.
+ */
+
+/**
+ * Implements hook_prepprocess_TEMPLATE for the "node" template.
+ */
+function mymodule_preprocess_node(&$variables) {
+  $config = \Drupal::config('mymodule.settings');
+
+  // Todo: Customize the variables here.
+
+
+  // Add cacheability metadata to ensure config changes are reflected.
+  $cache_extras = [];
+  \Drupal\Core\Render\BubbleableMetadata::createFromObject($config)
+    ->applyTo($cache_extras);
+  render($cache_extras);
+}
